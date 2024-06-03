@@ -11,6 +11,8 @@ export function App(){
     const [fact, setFact] = useState()
     const [imageUrl, setImageUrl] = useState()
 
+
+    // para recuperar la cita al cargar la pagina
     useEffect(()=>{
 fetch(CAT_ENDPOINT_RANDOM_FACT)
 .then(res => res.json())
@@ -19,6 +21,28 @@ fetch(CAT_ENDPOINT_RANDOM_FACT)
 
     const {fact} = data
     setFact(fact)
+
+   
+    
+
+    })
+}
+    
+    
+    
+
+
+
+
+
+
+    ,[])
+
+
+    //para recuperar la imagen cada vez que tenemos una cita nueva
+useEffect(()=>{
+
+    if (!fact) return
 
     const firstWord = fact.split(' ', 3).join(' ')
     console.log(firstWord)
@@ -33,22 +57,16 @@ fetch(CAT_ENDPOINT_RANDOM_FACT)
 const { url } = response
 
 
-setImageUrl(`https://${url}`)
+setImageUrl(`${url}`)
 
 
     })
-    
-
-    })
-}
-    
-    
-    
 
 
 
 
-    ,[])
+},[fact])
+
 
     
 
