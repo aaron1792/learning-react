@@ -10,12 +10,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-   
-    
     "globals": "^15.3.0",
     "standard": "^17.1.0"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
+  },
+  "dependencies": {
+    "vite": "^5.2.13"
   }
 }
